@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.pt-3-half {
+    padding-top: 1.4rem;
+}
+.table-add {
+    width: 7rem;
+    margin-right: 2rem;
+}
+.add-btn{
+    width: 100%;
+}
+.search-bar {
+    margin-right: 1rem;
+}
+.btn-success{
+    margin-right: 1rem;
+}   
+.container{
+    flex-wrap: wrap;
+    background-color: #6495ED;
+}
+.card-header-2 {
+    background-color: white;
+}
+/* .card-container {
+    flex-wrap: wrap;
+} */
+.btn-outline-success {
+    width: 100%;
+}
+.btn-outline-danger {
+    width: 100%;
+    margin-top: 1rem;
+}
