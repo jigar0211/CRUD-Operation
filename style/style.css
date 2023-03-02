@@ -1,37 +1,64 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .pt-3-half {
-    padding-top: 1.4rem;
+  padding-top: 1.4rem;
 }
 .table-add {
-    width: 7rem;
-    margin-right: 2rem;
+  width: 7rem;
+  margin-right: 2rem;
 }
-.add-btn{
-    width: 100%;
+.add-btn {
+  width: 5rem;
+}
+.search-btn {
+  width: 7rem;
 }
 .search-bar {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
-.btn-success{
-    margin-right: 1rem;
-}   
-.container{
-    flex-wrap: wrap;
-    background-color: #6495ED;
+.btn-success {
+  margin-right: 1rem;
+}
+.container {
+  flex-wrap: wrap;
 }
 .card-header-2 {
-    background-color: white;
+  background-color: white;
 }
-/* .card-container {
-    flex-wrap: wrap;
-} */
 .btn-outline-success {
-    width: 100%;
+  width: 100%;
 }
 .btn-outline-danger {
-    width: 100%;
-    margin-top: 1rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+.card-container {
+  justify-content: start;
+}
+.full-text {
+  display: none;
+}
+@media (max-width: 638px) {
+  .card-container {
+    justify-content: center;
+  }
+}
+@media (max-width: 540px) {
+  .search-btn {
+    margin-top: 10px;
+  }
+  .sort-btn {
+    margin-top: 10px;
+  }
+  .add-btn {
+    width: 12rem;
+  }
+  .short-text {
+    display: none;
+  }
+  .full-text {
+    display: inline-block;
+  }
 }

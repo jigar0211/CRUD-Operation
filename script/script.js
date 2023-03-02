@@ -38,7 +38,7 @@ function validateForm() {
   return true;
 }
 function showData() {
-  let productList;
+let productList
   if (localStorage.getItem("productList") == null) {
     productList = [];
   } else {
@@ -47,13 +47,13 @@ function showData() {
   let html = "";
   productList.forEach(function (element, index) {
     html += `<div class'card-body'>
-     <div class='row gx-5'>
+     <div class='row gx-2'>
      <div class='col'>
      <div class='p-3'>
      <div class='card d-flex' style='width: 18rem;'>
      <div class='card-body'>
      <h5 class='card-title'>Id #${element.id} </h5>
-     <img src="${element.image}" class='card-img-top' alt='Image'>
+     <img src="${element.image}" class='card-img-top' alt='Image' height="240px" width="480px">
      </div>
      <ul class='list-group list-group-flush'>
      <li class='list-group-item'>Product :  ${element.name}  </li>
@@ -90,6 +90,15 @@ function AddData() {
     } else {
       productList = JSON.parse(localStorage.getItem("productList"));
     }
+    // check if ID already exists
+    var existingProduct = productList.find(function (product) {
+      return product.id === id;
+    });
+    if (existingProduct) {
+      alert("Product with ID " + id + " already exists.");
+      return;
+    }
+
     reader.readAsDataURL(image.files[0]);
     reader.addEventListener("load", () => {
       productList.push({
@@ -165,6 +174,70 @@ function editdata(index) {
     document.getElementById("id-edit").value = "";
     document.getElementById("name-edit").value = "";
     document.getElementById("price-edit").value = "";
+    document.getElementById("close-btn").click();
     alert("Data Updated Successfully");
   };
 }
+// Filter Functions
+function filterProduct(sortvalue) {
+
+  let sortedProduct= JSON.parse(localStorage.getItem("sortedProduct")) ?? [];
+  let productList = JSON.parse(localStorage.getItem("productList")) ?? [];
+  sortedProduct = productList;
+  localStorage.setItem("sortedProduct", JSON.stringify(sortedProduct));
+  // console.log('if',sortedProduct)
+  if (sortvalue == "desc") {
+    let desc = true;
+    sortedProduct= sortedProduct.sort((a, b) => desc ? b.id - a.id : a.id - b.id);
+    desc = !desc;
+    console.log(sortedProduct);
+  } else if (sortvalue == "asc") {
+    let desc = false;
+    sortedProduct= sortedProduct.sort((a, b) => desc ? b.id - a.id : a.id - b.id);
+    console.log(sortedProduct);
+  } else if(sortvalue == "name") {
+    sortedProduct= sortedProduct = sortedProduct.sort((a,b)=>a.name.localeCompare(b.name))
+    console.log(sortedProduct)
+  } else if(sortvalue == "price") {
+    sortedProduct = sortedProduct.sort((a,b) => b.price - a.price);
+    console.log(sortedProduct)
+  }
+  return filteredData(sortedProduct)
+}
+let sortedProduct
+function filteredData(sortedProduct) {
+    if (localStorage.getItem("sortedProduct") == null) {
+      sortedProduct = [];
+    } else {
+      sortedProduct = JSON.parse(localStorage.getItem("sortedProduct"));
+    }
+    let html = "";
+    sortedProduct.forEach(function (element, index) {
+      html += `<div class'card-body'>
+       <div class='row gx-2'>
+       <div class='col'>
+       <div class='p-3'>
+       <div class='card d-flex' style='width: 18rem;'>
+       <div class='card-body'>
+       <h5 class='card-title'>Id #${element.id} </h5>
+       <img src="${element.image}" class='card-img-top' alt='Image' height="240px" width="480px">
+       </div>
+       <ul class='list-group list-group-flush'>
+       <li class='list-group-item'>Product :  ${element.name}  </li>
+       <li class='list-group-item'>Price :  $${element.price}</li>
+       </ul>
+       <div class='card-body text-center'>
+      
+        <button onclick='editdata("${index}")' type='button' data-bs-toggle='modal' data-bs-target='#exampleModal-2' class='btn btn-outline-success'><i class='fa-solid fa-pen-to-square'></i> Edit</button>
+      
+        <button onclick='deletedata("${index}")' type='button' class='btn btn-outline-danger'><i class='fa-solid fa-trash'></i> Delete</button>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>
+       </div>`;
+    });
+    document.querySelector("#sort-table").innerHTML = html;
+    document.querySelector("#curd-table").style.display = "none";
+  }
