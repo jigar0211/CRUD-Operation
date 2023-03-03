@@ -2,7 +2,7 @@
 
 ## :rocket: Live Demonstraion
 
-- [Preview Calculator](https://jigar0211.github.io/Javascript-Practical-III/)
+- [Preview CURD Operation Practical](https://jigar0211.github.io/Javascript-Practical-III/)
 
 ## Discription :
 A JavaScript project that can store details, including images, in local storage and perform CRUD (Create, Read, Update, Delete) operations on that data can be very useful for managing and organizing various types of information.
