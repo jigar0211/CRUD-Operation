@@ -38,87 +38,14 @@
           </div>
           <div class="col-12 col-sm-2">
             <button type="button" class="btn btn-primary add-btn w-100" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus"></i> <span class="short-text">Add</span> <span class="full-text">Add Product</span></button>
-          
-          
-            <!-- <div class="btn-group">
-              <button type="button" class="btn dropdown-toggle sort-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                Sort-By
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="filterProduct('asc')">id</a></li>
-                <li><a class="dropdown-item" href="#" onclick="filterProduct('name')">name</a></li>
-                <li><a class="dropdown-item" href="#" onclick="filterProduct('price')">Price</a></li>
-              </ul>
-            </div>     -->
           </div>
-          <!-- <div class="col-12 col-sm-2">
-            <div class="btn-group">
-              <button type="button" class="btn order-by" aria-expanded="false" id="refresh-btn">
-                refresh
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" onclick="filterProduct('asc')">ASC</a></li>
-                <li><a class="dropdown-item" href="#" onclick="filterProduct('desc')">DESC</a></li>
-              </ul>
-            </div>    
-          </div> -->
         </div>
       </div>
     </div>
   </div>
   <div class="container card-body-all  rounded">
-      <div class="card-container d-flex flex-wrap" id="curd-table">
-      <!-- <div class="card-body">
-      <div class="row gx-5">
-        <div class="col">
-         <div class="p-3">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Id: </h5>
-              <div width="100px" height="100px">
-              <img src="https://source.unsplash.com/414x414/?ferrari" class="card-img-top" alt="">
-            </div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Name: </li>
-              <li class="list-group-item">Price($): </li>
-            </ul>
-            <div class="card-body text-center">
-              <button type="button" class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-              <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i> Delete</button>
-            </div>
-          </div>
-         </div>
-        </div>
-      </div>
-      </div> -->
-    </div>
-    <div class="card-container d-flex flex-wrap" id="sort-table">
-      <!-- <div class="card-body">
-      <div class="row gx-5">
-        <div class="col">
-         <div class="p-3">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Id: </h5>
-              <div width="100px" height="100px">
-              <img src="https://source.unsplash.com/414x414/?ferrari" class="card-img-top" alt="">
-            </div>
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Name: </li>
-              <li class="list-group-item">Price($): </li>
-            </ul>
-            <div class="card-body text-center">
-              <button type="button" class="btn btn-outline-success"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
-              <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i> Delete</button>
-            </div>
-          </div>
-         </div>
-        </div>
-      </div>
-      </div> -->
-    </div>
+      <div class="card-container d-flex flex-wrap" id="curd-table"></div>
+    <div class="card-container d-flex flex-wrap" id="sort-table"></div>
   </div>
   
 
@@ -150,28 +77,6 @@
           </div>
         </form>
       </div>
-      <!-- <div class="modal-body">
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Product-ID</span>
-          <input type="text" class="form-control" id="id" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-          <input type="text" class="form-control" id="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">price</span>
-          <input type="text" class="form-control" id="price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupFile01">Description</label>
-          <textarea class="form-control" id="description"></textarea>
-        </div>
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupFile01">Image</label>
-          <input type="file" class="form-control" id="inputGroupFile01">
-        </div>
-      </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" id="submit" onclick="AddData()">Add</button>
@@ -213,29 +118,6 @@
         <div id="image-div"></div>
       </form>
       </div>
-      <!-- <div class="modal-body">
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Product-ID</span>
-          <input type="text" class="form-control" id="id-edit" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
-          <input type="text" class="form-control" id="name-edit" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-          <span class="input-group-text" id="inputGroup-sizing-default">price</span>
-          <input type="text" class="form-control" id="price-edit" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupFile01">Description</label>
-          <textarea class="form-control" id="description-edit"></textarea>
-        </div>
-        <div class="input-group mb-3">
-          <label class="input-group-text" for="inputGroupFile01">Image</label>
-          <input type="file" class="form-control" id="image-edit">
-        </div>
-        <div id="image-div"></div>
-      </div> -->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close-btn">Close</button>
         <button type="button" class="btn btn-success" id="update">Update</button>
